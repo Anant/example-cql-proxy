@@ -64,7 +64,7 @@ This is because we can't create a keyspace using CQL on Astra even with an admin
 
 #### 4.3 Comment out lines 20-24 in `data_importer.py' and re-run the command from 4.1 with a new keyspace in Astra or an existing one
 ```bash
-sed -i "20,24 {s/^/#/}" data_importer.py
+sed -i "19,23 {s/^/#/}" data_importer.py
 ```
 
 then
@@ -92,7 +92,7 @@ sed -i 's/# session.default_consistency_level = ConsistencyLevel.LOCAL_QUORUM/se
 
 #### 4.6 Comment out Table creation
 ```bash
- sed -i "26,30 {s/^/#/}" data_importer.py
+sed -i "26,30 {s/^/#/}" data_importer.py
 ```
 
 #### 4.7 Re-run `data_importer.py` with the command below
@@ -109,7 +109,7 @@ select count(*) from <keyspace_name>.<table_name>
 
 #### 5.2 Update number of records imported from 10 to 1000
 ```bash
- sed 's/rows = 10/rows = 1000/' data_importer.py 
+sed -i 's/rows = 10/rows = 1000/' data_importer.py 
 ```
 
 #### 5.3 Re-run `data_importer.py` with the command below
