@@ -141,7 +141,7 @@ for i in range(len(docs)):
     
 
     json_doc = str(json.dumps(tmp_doc))
-    session.default_consistency_level = ConsistencyLevel.LOCAL_QUORUM
+    # session.default_consistency_level = ConsistencyLevel.LOCAL_QUORUM
     insert_query = session.execute(
         "INSERT INTO "+sys.argv[2]+'.'+sys.argv[3]+" JSON %s" % "'"+json_doc.replace("'","''")+"'"
         )
